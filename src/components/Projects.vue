@@ -67,25 +67,30 @@ export default {
 
 <style lang="scss">
 .container {
-    padding: 20px;
-}
+    padding: 0 20px;
 
-.projects {
-    display: grid;
-    gap: 15px;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 20px;
-    margin-bottom: 50px;
-}
+    .title {
+        margin-bottom: 30px;
+    }
 
-.pagination {
-    display: flex;
-    gap: 5px;
-    justify-content: center;
-    cursor: pointer;
-}
+    .projects {
+        display: grid;
+        gap: 15px;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 20px;
+        margin-bottom: 50px;
+    }
 
-.active {
-    color: rgb(68, 203, 68);
+    .pagination {
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+        cursor: pointer;
+
+        .active {
+            color: rgb(68, 203, 68);
+        }
+    }
+
 }
 </style>

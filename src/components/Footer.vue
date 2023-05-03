@@ -18,9 +18,6 @@ export default {
 <style lang="scss">
 .main-footer {
     padding: 20px;
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    text-align: center;
 }
 </style>

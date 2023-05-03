@@ -6,7 +6,5 @@
   <router-view></router-view>
 </template>
 
-<style lang="scss">
-@use './style/general.scss';
-</style>
+<style lang="scss"></style>
 
