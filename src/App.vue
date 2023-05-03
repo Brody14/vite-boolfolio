@@ -1,20 +1,9 @@
 <script>
-import NavBar from './components/NavBar.vue'
-export default {
-  components: {
-    NavBar,
-  }
-}
+
 </script>
 
 <template>
-  <header>
-    <NavBar />
-  </header>
-
-  <main>
-    <router-view></router-view>
-  </main>
+  <router-view></router-view>
 </template>
 
 <style lang="scss">
