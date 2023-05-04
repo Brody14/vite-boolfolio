@@ -15,7 +15,7 @@ export default {
     </footer>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .main-footer {
     padding: 20px;
     text-align: center;
