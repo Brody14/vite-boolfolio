@@ -42,6 +42,10 @@ export default {
     },
     created() {
         this.fetchProject(this.slug)
+    },
+    beforeRouteUpdate(to, from) {
+        const newSlug = to.params.slug
+        this.fetchProject(newSlug)
     }
 }
 </script>
