@@ -1,15 +1,26 @@
 <script>
 import DefaultLayout from '../layouts/Default.vue';
 import axios from 'axios';
+import ProjectCard from '../components/ProjectCard.vue'
 
 export default {
     components: {
-        DefaultLayout
+        DefaultLayout,
+        ProjectCard
     },
     data() {
         return {
             project: null,
             loading: true
+        }
+    },
+    computed: {
+        relatedProjects() {
+            if (this.project.type) {
+                return this.project.type.projects
+            }
+
+            return []
         }
     },
     props: ['slug'],
@@ -52,10 +63,21 @@ export default {
             </div>
 
             <div class="container">
+                <h5 class="related_title">Related Projects</h5>
+                <ul class="related_list">
+                    <li v-for="related in relatedProjects" :key="related.id">
+                        <ProjectCard :project="related" />
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="container">
                 <router-link :to="{ name: 'portfolio' }">
                     <button class="btn">Back</button>
                 </router-link>
             </div>
+
         </template>
     </DefaultLayout>
 </template>
@@ -97,6 +119,19 @@ export default {
 }
 
 .project_url {
-    line-height: 40px;
+    display: block;
+    margin-bottom: 30px;
+}
+
+.related_title {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.related_list {
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 </style>

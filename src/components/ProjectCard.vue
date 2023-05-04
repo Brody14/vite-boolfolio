@@ -34,6 +34,7 @@ a {
     border: 1px solid black;
     border-radius: 5px;
     width: 300px;
+    height: 200px;
     padding: 15px;
 
     .project_title {
