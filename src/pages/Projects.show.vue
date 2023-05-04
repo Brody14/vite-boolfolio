@@ -29,11 +29,17 @@ export default {
             this.loading = false
             axios.get(`http://127.0.0.1:8000/api/projects/${slug}`)
                 .then(res => {
-                    const results = res.data;
-                    this.project = results.project;
+                    const { success, project } = res.data
+
+                    if (success) {
+                        this.project = project
+                    } else {
+                        this.$router.replace({ name: '404' })
+                    }
+
                 })
                 .catch(err => {
-                    console.log(err)
+                    this.$router.replace({ name: '404' })
                 })
                 .finally(() => {
                     this.loading = true

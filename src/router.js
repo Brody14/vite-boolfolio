@@ -3,6 +3,7 @@ import Home from "./pages/Home.vue";
 import Portfolio from "./pages/Portfolio.vue";
 import About from "./pages/About.vue";
 import ProjectsShow from "./pages/Projects.show.vue";
+import NotFound from "./pages/404.vue";
 
 const router = createRouter({
 	history: createWebHistory(),
@@ -27,6 +28,11 @@ const router = createRouter({
 			name: "projects.show",
 			component: ProjectsShow,
 			props: true,
+		},
+		{
+			path: "/404",
+			name: "404",
+			component: NotFound,
 		},
 	],
 });
