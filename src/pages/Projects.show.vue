@@ -60,6 +60,7 @@ export default {
     <DefaultLayout>
         <template v-if="loading">
             <div class="container">
+                <img class="project_cover" v-if="project.cover" :src="project.cover_path">
                 <h1 class="project_title"> {{ project.title }}</h1>
                 <p class="project_type"> {{ project.type ? project.type.name : '' }}</p>
                 <ul class="project_tec">
@@ -94,6 +95,11 @@ export default {
 
 <style lang="scss" scoped>
 @use '../style/partials/variables' as *;
+
+.project_cover {
+    width: 100px;
+    margin: 0 auto;
+}
 
 .project_title {
     text-transform: capitalize;
